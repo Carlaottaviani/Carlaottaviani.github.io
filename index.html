@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carla Ottaviani — Strategic Communications & Content</title>
+  <meta name="description" content="Strategic communications, storytelling and content across finance, science, health, business and innovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#f5f0e8;
+      --paper:#fffaf2;
+      --ink:#171a2b;
+      --ink2:#263145;
+      --coral:#d96f5f;
+      --coral-soft:#f0b6aa;
+      --teal:#2c7270;
+      --teal-soft:#b8d7d3;
+      --rose:#ead8d2;
+      --sand:#dcc9ae;
+      --white:#fff;
+      --radius:28px;
+      --shadow:0 22px 70px rgba(21,24,39,.12);
+      --line:rgba(23,26,43,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img,video{display:block;max-width:100%}
+    button{font:inherit}
+    .page{position:relative}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(245,240,232,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,26,43,.08)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:700;letter-spacing:.04em;font-size:.9rem;text-transform:uppercase}
+    .nav-links{display:flex;gap:22px;font-size:.9rem;color:var(--ink2)}
+    .lang{display:flex;border:1px solid rgba(23,26,43,.15);border-radius:999px;padding:3px;background:#fff7}
+    .lang button{border:0;background:transparent;border-radius:999px;padding:7px 10px;cursor:pointer;color:var(--ink)}
+    .lang button.active{background:var(--ink);color:white}
+
+    .hero{min-height:calc(100vh - 72px);display:grid;align-items:center;position:relative;isolation:isolate;padding:72px 0 84px}
+    .hero::before{content:"";position:absolute;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(217,111,95,.36),rgba(217,111,95,.10) 45%,transparent 72%);right:-180px;top:-100px;z-index:-2}
+    .hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(44,114,112,.16),transparent 72%);left:-220px;bottom:-160px;z-index:-2}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:54px;align-items:center}
+    .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--teal);margin-bottom:18px}
+    h1,h2,h3{margin:0}
+    .display{font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:-.035em}
+    .hero h1{font-size:clamp(4.2rem,8vw,8.4rem);line-height:.82;max-width:820px}
+    .hero h1 em{color:var(--coral);font-style:italic}
+    .hero-sub{font-size:clamp(1.08rem,1.55vw,1.34rem);line-height:1.5;max-width:690px;margin:28px 0 18px}
+    .hero-mini{font-size:1rem;line-height:1.7;color:#3f485d;max-width:690px}
+    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+    .tag{display:inline-flex;padding:8px 12px;border-radius:999px;border:1px solid rgba(23,26,43,.13);background:rgba(255,255,255,.48);font-size:.78rem}
+    .cta-row{display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.25s ease}
+    .btn.primary{background:var(--coral);color:white}
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(217,111,95,.28)}
+    .btn.ghost{border-color:rgba(23,26,43,.15);background:#fff8}
+    .location{font-size:.84rem;color:#596176;margin-top:20px}
+
+    .portrait-wrap{position:relative;min-height:620px;display:grid;place-items:center}
+    .portrait-card{width:min(430px,90%);aspect-ratio:4/5;border-radius:180px 180px 34px 34px;overflow:hidden;background:#fff;box-shadow:var(--shadow);position:relative;z-index:4}
+    .portrait-card img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+    .shape{position:absolute;border-radius:42% 58% 63% 37% / 49% 36% 64% 51%;filter:saturate(.9)}
+    .shape.one{width:330px;height:330px;background:var(--teal-soft);right:-8px;bottom:48px;transform:rotate(18deg);z-index:1}
+    .shape.two{width:240px;height:240px;background:var(--coral-soft);left:-20px;top:40px;transform:rotate(-18deg);z-index:2}
+    .loop-art{position:absolute;inset:auto -120px 30px auto;width:620px;height:360px;z-index:3;opacity:.78;pointer-events:none}
+    .loop-art svg{width:100%;height:100%}
+    .loop-art path{fill:none;stroke:var(--ink);stroke-width:1.15;opacity:.26}
+
+    section{padding:120px 0;position:relative}
+    .section-kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-bottom:18px}
+    .section-title{font-family:"Instrument Serif",serif;font-size:clamp(3.6rem,7vw,7.3rem);line-height:.9;letter-spacing:-.035em}
+    .section-copy{max-width:680px;font-size:1.08rem;line-height:1.75;color:#40485b;margin-top:24px}
+
+    .think{background:#e8ded2;overflow:hidden}
+    .think .wrap{position:relative;z-index:2}
+    .think-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:end}
+    .statement{font-family:"Instrument Serif",serif;font-size:clamp(2rem,3.4vw,4rem);line-height:1.04;margin-top:42px}
+    .statement strong{color:var(--teal);font-weight:400;font-style:italic}
+    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:60px}
+    .step{min-height:180px;background:rgba(255,250,242,.72);border:1px solid rgba(23,26,43,.1);border-radius:24px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}
+    .step:hover{transform:translateY(-6px);background:white}
+    .step-num{font-family:"Instrument Serif",serif;font-size:2.1rem;color:var(--coral)}
+    .step-label{font-weight:700;font-size:.95rem}
+    .big-wave{position:absolute;right:-80px;top:18px;width:760px;height:760px;opacity:.17}
+    .big-wave svg{width:100%;height:100%;animation:floatWave 10s ease-in-out infinite alternate}
+    .big-wave path{fill:none;stroke:var(--teal);stroke-width:1.3}
+    @keyframes floatWave{to{transform:translate(-20px,18px) rotate(2deg)}}
+
+    .work-intro{padding-bottom:72px}
+    .work-intro .section-title{max-width:830px}
+    .project{padding:94px 0;border-top:1px solid rgba(23,26,43,.1)}
+    .project-head{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;margin-bottom:44px}
+    .project-title{font-family:"Instrument Serif",serif;font-size:clamp(3rem,5vw,5.6rem);line-height:.9}
+    .project-sub{color:#596176;margin-top:12px;max-width:620px;line-height:1.6}
+    .project-number{font-family:"Instrument Serif",serif;font-size:5rem;color:rgba(23,26,43,.13)}
+    .project .tags{margin-top:18px}
+    .work-card{border-radius:var(--radius);overflow:hidden;background:white;box-shadow:var(--shadow)}
+    .portfolio-zone{background:#dde8e5;padding:56px;border-radius:36px;position:relative;overflow:hidden}
+    .portfolio-zone::after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(44,114,112,.2);border-radius:50%;right:-240px;bottom:-260px;box-shadow:0 0 0 40px rgba(44,114,112,.05),0 0 0 80px rgba(44,114,112,.04),0 0 0 120px rgba(44,114,112,.03)}
+    .newsletter-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch;position:relative;z-index:2}
+    .newsletter-visual{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px}
+    .newsletter-visual img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+    .metric-panel{background:var(--ink);color:white;border-radius:26px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:100%}
+    .metric-panel h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin:0 0 24px;color:#e9ede9}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .metric strong{font-family:"Instrument Serif",serif;font-size:clamp(2.6rem,4vw,4.5rem);font-weight:400;display:block;line-height:.9;color:#fff}
+    .metric span{display:block;margin-top:8px;font-size:.8rem;color:#d8dde3}
+    .small-copy{font-size:.94rem;line-height:1.6;color:#d8dde3;margin:26px 0 0}
+    .linkline{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-weight:700;font-size:.9rem}
+
+    .media-row{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;margin-top:44px;align-items:center}
+    .phone-shell{width:min(330px,100%);margin:auto;background:#111;border-radius:52px;padding:12px;box-shadow:0 28px 70px rgba(23,26,43,.24);position:relative}
+    .phone-shell::before{content:"";position:absolute;width:86px;height:20px;border-radius:999px;background:#111;left:50%;transform:translateX(-50%);top:12px;z-index:3}
+    .phone-shell video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:41px;background:black}
+    .media-copy h4,.carousel-copy h4,.science-copy h4,.brand-copy h4{font-family:"Instrument Serif",serif;font-size:clamp(2.6rem,4vw,4.6rem);font-weight:400;margin:0 0 10px}
+    .media-copy p,.carousel-copy p,.science-copy p,.brand-copy p{line-height:1.7;color:#50586b;max-width:580px}
+    .mini-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .mini-tags span{font-size:.76rem;padding:7px 10px;border-radius:999px;background:#fff9;border:1px solid rgba(23,26,43,.1)}
+    .carousel-row{display:grid;grid-template-columns:1fr .9fr;gap:40px;margin-top:60px;align-items:center}
+    .carousel-cover{background:#fff;border-radius:28px;padding:18px;box-shadow:var(--shadow);transform:rotate(-1.4deg)}
+    .carousel-cover img{border-radius:18px}
+
+    .science-zone{background:#f5e1de;border-radius:36px;padding:56px;position:relative;overflow:hidden}
+    .science-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;align-items:center}
+    .science-video{background:#fff;border-radius:34px;padding:20px;box-shadow:var(--shadow)}
+    .science-video video{border-radius:24px;width:100%;aspect-ratio:9/16;object-fit:cover;max-height:640px;background:black}
+    .science-note{margin-top:18px;font-size:.86rem;color:#6b5860}
+    .hh-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;margin-top:54px}
+    .hh-grid img{border-radius:26px;width:100%;height:100%;object-fit:cover;box-shadow:var(--shadow)}
+    .hh-copy{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-top:8px}
+
+    .brand-zone{background:#efe5d8;border-radius:36px;padding:56px;overflow:hidden;position:relative}
+    .brand-collage{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:start}
+    .collage-left{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .collage-left .large{grid-column:1/-1}
+    .brand-collage img{border-radius:24px;box-shadow:var(--shadow);background:white}
+    .travel{transform:rotate(1.2deg)}
+    .product{width:78%;margin-left:auto;transform:rotate(-2deg)}
+    .editorial-chip{display:inline-flex;margin-top:18px;padding:10px 14px;border-radius:999px;background:var(--ink);color:white;font-size:.8rem;font-weight:700}
+
+
+    .newsletter-visual{display:grid;grid-template-columns:1fr;gap:18px}
+    .newsletter-cover-frame{aspect-ratio:16/9;background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+    .newsletter-cover-frame img{width:100%;height:100%;object-fit:contain;border-radius:0}
+    .newsletter-intro-card{background:rgba(255,255,255,.78);border:1px solid rgba(23,26,43,.1);border-radius:22px;padding:24px 26px;line-height:1.65;color:#2f3949;font-size:.98rem;box-shadow:0 14px 36px rgba(23,26,43,.07)}
+    .newsletter-intro-card .eyebrow{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#2c7270;margin-bottom:10px}
+    .hh-grid{display:grid;grid-template-columns:1fr .48fr;gap:20px;margin-top:54px;align-items:stretch}
+    .hh-grid .hh-web-frame{aspect-ratio:16/9;background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+    .hh-grid .hh-web-frame img{width:100%;height:100%;object-fit:contain;border-radius:0;box-shadow:none}
+    .hh-grid .hh-social-frame{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+    .hh-grid .hh-social-frame img{width:100%;height:100%;object-fit:contain;border-radius:0;box-shadow:none}
+    .article-links{display:grid;gap:10px;margin-top:22px}
+    .article-link{appearance:none;border:1px solid rgba(23,26,43,.12);background:rgba(255,255,255,.66);border-radius:14px;padding:13px 15px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;transition:.2s ease;display:flex;justify-content:space-between;gap:14px;align-items:center}
+    .article-link:hover{transform:translateY(-2px);background:#fff}
+    .article-link small{display:block;color:#6b6f79;margin-top:3px}
+    .article-modal{position:fixed;inset:0;background:rgba(15,17,28,.76);display:none;align-items:center;justify-content:center;padding:24px;z-index:1000}
+    .article-modal.open{display:flex}
+    .article-modal-card{width:min(900px,100%);max-height:88vh;overflow:auto;background:#fbf8f2;border-radius:26px;padding:34px 36px;box-shadow:0 30px 100px rgba(0,0,0,.35);position:relative}
+    .article-modal-card h3{font-family:"Instrument Serif",serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:400;margin:0 50px 18px 0}
+    .article-modal-card p{line-height:1.72;color:#394052;margin:0 0 16px}
+    .article-modal-card h4{margin:28px 0 10px;font-size:1.15rem;color:var(--ink)}
+    .article-close{position:sticky;float:right;top:0;border:0;background:var(--ink);color:#fff;width:38px;height:38px;border-radius:999px;cursor:pointer;font-size:1.2rem;z-index:2}
+
+    .about{background:var(--ink);color:white;overflow:hidden}
+    .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
+    .about-photo{border-radius:180px 28px 180px 28px;overflow:hidden;background:#fff;box-shadow:0 30px 90px rgba(0,0,0,.25)}
+    .about-photo img{width:100%;height:100%;object-fit:cover}
+    .about .section-kicker{color:var(--coral-soft)}
+    .about .section-copy{color:#d9dde6}
+    .about-quote{font-family:"DM Sans",sans-serif;font-size:clamp(1.15rem,1.8vw,1.6rem);line-height:1.5;margin-top:28px;color:#fff;max-width:820px;font-weight:500}
+
+    .contact{background:var(--coral);color:white;padding:120px 0 100px}
+    .contact-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+    .contact h2{font-family:"Instrument Serif",serif;font-size:clamp(4rem,8vw,8rem);font-weight:400;line-height:.83;letter-spacing:-.04em;max-width:900px}
+    .contact-links{display:grid;gap:12px;text-align:right}
+    .contact-links a{font-weight:700;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:6px}
+    .footer{background:var(--coral);color:white;padding:0 0 34px;font-size:.78rem;opacity:.85}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    [data-lang="es"]{display:none}
+    body.es [data-lang="en"]{display:none}
+    body.es [data-lang="es"]{display:initial}
+    body.es .block-lang[data-lang="es"]{display:block}
+    body:not(.es) .block-lang[data-lang="en"]{display:block}
+    .block-lang{display:none}
+
+
+    .long-video-row{display:grid;grid-template-columns:1.06fr .94fr;gap:38px;margin-top:54px;align-items:center}
+    .video-poster{position:relative;display:block;aspect-ratio:16/9;border-radius:28px;padding:28px 30px;background:linear-gradient(135deg,#101426 0%,#1b2342 52%,#315272 100%);box-shadow:0 30px 85px rgba(23,26,43,.20);overflow:hidden;color:#fff;text-decoration:none}
+    .video-poster::before{content:"";position:absolute;inset:auto -10% -20% auto;width:62%;height:62%;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 65%)}
+    .video-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent 35%,rgba(255,255,255,.03));pointer-events:none}
+    .video-window{display:flex;gap:8px;align-items:center;margin-bottom:18px}
+    .video-window span{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.28);display:inline-block}
+    .video-kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;opacity:.82;margin-bottom:14px}
+    .video-poster h5{font-family:"Instrument Serif",serif;font-size:clamp(2rem,3vw,3.2rem);font-weight:400;line-height:1.02;margin:0 0 14px;max-width:9ch}
+    .video-poster p{max-width:34ch;color:rgba(255,255,255,.8);line-height:1.55;margin:0}
+    .video-poster .watch-cta{position:absolute;left:30px;bottom:26px;font-size:.86rem;font-weight:700;letter-spacing:.01em}
+    .video-poster .play-pill{position:absolute;right:28px;bottom:24px;width:68px;height:68px;border-radius:999px;background:rgba(255,255,255,.14);display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+    .video-poster .play-pill::before{content:"▶";font-size:1.3rem;transform:translateX(2px)}
+
+    .hh-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(280px,.62fr);gap:24px;margin-top:54px;align-items:start}
+    .hh-grid .hh-web-frame,.hh-grid .hh-social-frame{position:relative;overflow:visible}
+    .hh-grid .hh-web-frame img,.hh-grid .hh-social-frame img{width:100%;height:100%;object-fit:contain;border-radius:26px;box-shadow:var(--shadow);background:#fff;display:block}
+    .hh-grid .hh-web-frame img{aspect-ratio:16/9}
+    .hh-grid .hh-social-frame img{aspect-ratio:4/5}
+    .note-arrow{position:absolute;font-size:.74rem;line-height:1.2;color:#746c75;letter-spacing:.01em;background:rgba(251,248,242,.94);padding:6px 10px;border-radius:999px;border:1px solid rgba(23,26,43,.08);box-shadow:0 10px 24px rgba(23,26,43,.06);white-space:nowrap;z-index:3}
+    .note-arrow.web{left:10px;top:-18px}
+    .note-arrow.social{right:10px;bottom:-18px}
+
+
+    .cover-poster{padding:0;background:#0f1421}
+    .cover-poster img{width:100%;height:100%;object-fit:cover;display:block}
+    .cover-poster .cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(8,12,21,.62) 100%);pointer-events:none}
+    .cover-poster .watch-cta{z-index:2;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+    .cover-poster .play-pill{z-index:2;background:rgba(255,255,255,.2)}
+
+    @media(max-width:960px){
+      .nav-links{display:none}
+      .hero-grid,.think-grid,.newsletter-grid,.media-row,.long-video-row,.carousel-row,.science-grid,.brand-collage,.about-grid,.contact-grid,.hh-copy{grid-template-columns:1fr}
+      .portrait-wrap{min-height:520px;margin-top:24px}
+      .process{grid-template-columns:1fr 1fr}
+      .newsletter-visual{grid-template-columns:1fr 1fr}
+      .metrics{grid-template-columns:1fr 1fr}
+      .hh-grid{grid-template-columns:1fr}.note-arrow{position:static;display:inline-flex;margin-top:10px}.note-arrow.social{justify-self:start}
+      .project-head{grid-template-columns:1fr}
+      .project-number{font-size:3rem}
+      .portfolio-zone,.science-zone,.brand-zone{padding:28px}
+      .contact-links{text-align:left}
+    }
+    @media(max-width:640px){
+      .wrap{width:min(100% - 24px,1180px)}
+      section{padding:84px 0}
+      .hero{padding-top:42px}
+      .hero h1{font-size:clamp(3.6rem,17vw,5.5rem)}
+      .hero-grid{gap:24px}
+      .portrait-wrap{min-height:430px}
+      .portrait-card{width:86%}
+      .process{grid-template-columns:1fr}
+      .newsletter-visual,.metrics,.collage-left{grid-template-columns:1fr}
+      .portfolio-zone,.science-zone,.brand-zone{border-radius:26px;padding:20px}
+      .hh-copy{gap:18px}
+      .contact h2{font-size:clamp(4rem,18vw,6rem)}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Carla Ottaviani</a>
+      <div class="nav-links">
+        <a href="#thinking"><span data-lang="en">How I think</span><span data-lang="es">Cómo pienso</span></a>
+        <a href="#work"><span data-lang="en">My work</span><span data-lang="es">Mi trabajo</span></a>
+        <a href="#about"><span data-lang="en">About</span><span data-lang="es">Sobre mí</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
+      </div>
+      <div class="lang" aria-label="Language switcher"><button id="enBtn" class="active">EN</button><button id="esBtn">ES</button></div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Strategic Communications & Content</div>
+          <h1 class="display block-lang" data-lang="en">The world can be <em>reinvented</em> by words</h1>
+          <h1 class="display block-lang" data-lang="es">El mundo puede <em>reinventarse</em> con palabras</h1>
+          <p class="hero-sub block-lang" data-lang="en">I turn complex ideas into clear, strategic communication across finance, science, health, business and innovation.</p>
+          <p class="hero-sub block-lang" data-lang="es">Transformo ideas complejas en comunicación clara y estratégica para los sectores de finanzas, ciencia, salud, negocios e innovación.</p>
+          <p class="hero-mini block-lang" data-lang="en">I’ve always been drawn to the power of words, not just to explain ideas, but to move people. Today, I use communication as a strategic tool to turn complex topics into stories that feel clear, relevant and meaningful.</p>
+          <p class="hero-mini block-lang" data-lang="es">Siempre me atrajo el poder de las palabras, no solo para explicar ideas, sino también para generar una emoción. Hoy trabajo con la comunicación como herramienta estratégica para transformar temas complejos en historias claras, relevantes y significativas.</p>
+          <div class="tags">
+            <span class="tag">Storytelling</span><span class="tag">Strategic Thinking</span><span class="tag">Entrepreneurship</span><span class="tag">Versatility</span><span class="tag">Continuous Learning</span>
+          </div>
+          <div class="cta-row"><a class="btn primary" href="#work"><span data-lang="en">Discover my work</span><span data-lang="es">Descubrí mi trabajo</span></a><a class="btn ghost" href="mailto:cottavianipapini@gmail.com">Email</a></div>
+          <div class="location block-lang" data-lang="en">Based in Mendoza, Argentina · Open to remote opportunities worldwide</div>
+          <div class="location block-lang" data-lang="es">Mendoza, Argentina · Disponible para oportunidades remotas en cualquier parte del mundo</div>
+        </div>
+        <div class="portrait-wrap reveal">
+          <div class="shape one"></div><div class="shape two"></div>
+          <div class="portrait-card"><img src="assets/carla-headshot.webp" alt="Portrait of Carla Ottaviani"></div>
+          <div class="loop-art" aria-hidden="true"><svg viewBox="0 0 620 360"><g>
+            <path d="M-20 310 C130 80, 240 510, 650 55"/><path d="M-10 295 C140 70, 252 490, 650 64"/><path d="M0 280 C150 60, 264 470, 650 73"/><path d="M10 265 C160 50, 276 450, 650 82"/><path d="M20 250 C170 40, 288 430, 650 91"/><path d="M30 235 C180 30, 300 410, 650 100"/><path d="M40 220 C190 20, 312 390, 650 109"/><path d="M50 205 C200 10, 324 370, 650 118"/>
+          </g></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thinking" class="think">
+      <div class="big-wave" aria-hidden="true"><svg viewBox="0 0 760 760"><g>
+        <path d="M80 0 C600 170 120 520 740 760"/><path d="M55 0 C575 180 95 520 715 760"/><path d="M30 0 C550 190 70 520 690 760"/><path d="M5 0 C525 200 45 520 665 760"/><path d="M-20 0 C500 210 20 520 640 760"/><path d="M-45 0 C475 220 -5 520 615 760"/><path d="M-70 0 C450 230 -30 520 590 760"/><path d="M-95 0 C425 240 -55 520 565 760"/>
+      </g></svg></div>
+      <div class="wrap think-grid">
+        <div class="reveal">
+          <div class="section-kicker"><span data-lang="en">How I think</span><span data-lang="es">Cómo pienso</span></div>
+          <h2 class="section-title block-lang" data-lang="en">From complexity to <em>clarity.</em></h2>
+          <h2 class="section-title block-lang" data-lang="es">De la complejidad a la <em>claridad.</em></h2>
+        </div>
+        <div class="reveal">
+          <p class="section-copy block-lang" data-lang="en">I don’t start with the format. I start with the message. My work begins by understanding the business goal, the audience and the complexity behind the topic. From there, I define the narrative, choose the right channel and turn the idea into content that feels clear, relevant and useful.</p>
+          <p class="section-copy block-lang" data-lang="es">No empiezo por el formato. Empiezo por el mensaje. Mi trabajo comienza entendiendo el objetivo del negocio, la audiencia y la complejidad detrás del tema. Desde ahí, defino la narrativa, elijo el canal adecuado y convierto la idea en contenido claro, relevante y útil.</p>
+          <div class="statement block-lang" data-lang="en">The format is a tool. <strong>The strategy comes first.</strong></div>
+          <div class="statement block-lang" data-lang="es">El formato es una herramienta. <strong>La estrategia viene primero.</strong></div>
+        </div>
+        <div class="process" style="grid-column:1/-1">
+          <div class="step reveal"><div class="step-num">01</div><div class="step-label">Complex information</div></div>
+          <div class="step reveal"><div class="step-num">02</div><div class="step-label">Strategic thinking</div></div>
+          <div class="step reveal"><div class="step-num">03</div><div class="step-label">Narrative</div></div>
+          <div class="step reveal"><div class="step-num">04</div><div class="step-label">Right format</div></div>
+          <div class="step reveal"><div class="step-num">05</div><div class="step-label">Content</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work-intro">
+      <div class="wrap reveal">
+        <div class="section-kicker"><span data-lang="en">My work</span><span data-lang="es">Mi trabajo</span></div>
+        <h2 class="section-title block-lang" data-lang="en">Strategy turned into <em>content.</em></h2>
+        <h2 class="section-title block-lang" data-lang="es">Estrategia convertida en <em>contenido.</em></h2>
+        <p class="section-copy block-lang" data-lang="en">A selection of work across strategy, storytelling, editorial content, design and video.</p>
+        <p class="section-copy block-lang" data-lang="es">Una selección de trabajos de estrategia, storytelling, contenido editorial, diseño y video.</p>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="wrap">
+        <div class="project-head reveal">
+          <div><div class="project-title">Portfolio S.A</div><div class="project-sub block-lang" data-lang="en">Financial communication across newsletters, social content and video.</div><div class="project-sub block-lang" data-lang="es">Comunicación financiera a través de newsletters, redes sociales y video.</div><div class="tags"><span class="tag">Strategy</span><span class="tag">Scripting</span><span class="tag">Filming</span><span class="tag">Editing</span><span class="tag">Copywriting</span><span class="tag">Publishing</span></div></div>
+          <div class="project-number">01</div>
+        </div>
+        <div class="portfolio-zone reveal">
+          <div class="newsletter-grid">
+            <div class="newsletter-visual">
+              <div class="newsletter-cover-frame"><img src="assets/newsletter-cover.webp" alt="Break Financiero newsletter cover"></div>
+              <div class="newsletter-intro-card">
+                <span class="eyebrow"><span data-lang="en">Newsletter opening</span><span data-lang="es">Apertura del newsletter</span></span>
+                <p class="block-lang" data-lang="en">While we count down the hours to see Argentina face England in an epic match, the market is also waiting for this afternoon’s inflation data. Meanwhile, global attention has shifted back to the Middle East, where geopolitical tensions pushed oil prices higher and brought volatility back to the major financial markets.</p>
+                <p class="block-lang" data-lang="es">Mientras contamos las horas para ver a la selección en un duelo épico frente a Inglaterra, el mercado espera el dato de inflación para esta tarde. Al mismo tiempo, el mundo volvió a mirar con preocupación a Medio Oriente: la tensión geopolítica hizo subir el petróleo y devolvió volatilidad a los principales mercados financieros.</p>
+              </div>
+            </div>
+            <div class="metric-panel">
+              <div><h4>Break Financiero Newsletter</h4><div class="metrics"><div class="metric"><strong>7,381</strong><span>Article views</span></div><div class="metric"><strong>706</strong><span>Subscribers</span></div><div class="metric"><strong>4,504</strong><span>Impressions</span></div></div></div>
+              <p class="small-copy block-lang" data-lang="en">Weekly market analysis turned into accessible editorial content for investors and companies.</p><p class="small-copy block-lang" data-lang="es">Análisis semanal de mercado convertido en contenido editorial accesible para inversores y empresas.</p>
+              <a class="linkline" href="https://www.linkedin.com/pulse/la-previa-tambi%C3%A9n-se-juega-en-los-mercados-portfolio-s-a-d0rzf" target="_blank" rel="noopener"><span data-lang="en">Read full newsletter ↗</span><span data-lang="es">Leer newsletter completo ↗</span></a>
+            </div>
+          </div>
+          <div class="media-row">
+            <div class="phone-shell"><video controls playsinline preload="metadata"><source src="assets/portfolio-vertical.mp4" type="video/mp4"></video></div>
+            <div class="media-copy"><h4>Short-form video content</h4><p class="block-lang" data-lang="en">Educational financial content adapted into vertical video. End-to-end production: strategy, script, filming, editing, copywriting and publishing.</p><p class="block-lang" data-lang="es">Contenido financiero educativo adaptado a video vertical. Producción end-to-end: estrategia, guion, grabación, edición, copy y publicación.</p><div class="mini-tags"><span>Video Editing</span><span>Motion</span><span>Educational Content</span><span>Short-form</span></div></div>
+          </div>
+          <div class="long-video-row">
+            <a class="video-poster cover-poster" href="https://youtu.be/BpnRMEGmqEI?si=R1zS-AdCJ6uB89u1" target="_blank" rel="noopener">
+              <img src="assets/bonos-verdes-cover.webp" alt="Bonos Verdes video cover with Carina Egea">
+              <div class="cover-overlay"></div>
+              <div class="watch-cta block-lang" data-lang="en">Watch on YouTube ↗</div><div class="watch-cta block-lang" data-lang="es">Ver en YouTube ↗</div>
+              <div class="play-pill" aria-hidden="true"></div>
+            </a>
+            <div class="media-copy"><h4>Long-form market video</h4><p class="block-lang" data-lang="en">A longer-form video piece built to explain bond-related market context in a more in-depth way, while keeping the tone clear and accessible.</p><p class="block-lang" data-lang="es">Una pieza audiovisual de formato largo pensada para explicar el contexto de mercado vinculado a bonos de forma más profunda, manteniendo un tono claro y accesible.</p><div class="mini-tags"><span>Long-form video</span><span>Market analysis</span><span>YouTube</span><span>Financial Communication</span></div><a class="linkline" href="https://youtu.be/BpnRMEGmqEI?si=R1zS-AdCJ6uB89u1" target="_blank" rel="noopener"><span data-lang="en">Open on YouTube ↗</span><span data-lang="es">Abrir en YouTube ↗</span></a></div>
+          </div>
+          <div class="carousel-row">
+            <div class="carousel-cover"><img src="assets/debt-cover.webp" alt="Financial carousel about debt"></div>
+            <div class="carousel-copy"><h4>Social storytelling</h4><p class="block-lang" data-lang="en">Concept-driven carousel content designed to simplify financial ideas and connect them with real business decisions.</p><p class="block-lang" data-lang="es">Carruseles conceptuales diseñados para simplificar ideas financieras y conectarlas con decisiones reales de negocio.</p><div class="mini-tags"><span>Storytelling</span><span>Design</span><span>Copywriting</span><span>Educational Content</span></div><a class="linkline pdf-launch" href="assets/debt-carousel.pdf" target="_blank"><span data-lang="en">View full carousel ↗</span><span data-lang="es">Ver carrusel completo ↗</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="wrap">
+        <div class="project-head reveal"><div><div class="project-title">Science & Health</div><div class="project-sub block-lang" data-lang="en">Clear communication for science-driven and health-related projects.</div><div class="project-sub block-lang" data-lang="es">Comunicación clara para proyectos científicos y de salud.</div><div class="tags"><span class="tag">Scientific Communication</span><span class="tag">Brand Positioning</span><span class="tag">Video</span><span class="tag">Storytelling</span><span class="tag">Institutional Communication</span></div></div><div class="project-number">02</div></div>
+        <div class="science-zone reveal">
+          <div class="science-grid">
+            <div class="science-video"><video controls muted playsinline preload="metadata"><source src="assets/spherebio-personalized.mp4" type="video/mp4"></video></div>
+            <div class="science-copy"><h4>SphereBio</h4><p class="block-lang" data-lang="en">Institutional communication for a biotech startup. I led strategic messaging, press communication, pitch support and digital content creation.</p><p class="block-lang" data-lang="es">Comunicación institucional para una startup biotecnológica. Lideré el messaging estratégico, prensa, apoyo en pitch decks y creación de contenido digital.</p><div class="mini-tags"><span>Strategy</span><span>Press</span><span>Startup Communication</span><span>Video</span><span>Messaging</span></div><p class="science-note block-lang" data-lang="en">Also involved in brochures, letterheads, custom stationery and investor-facing materials.</p><p class="science-note block-lang" data-lang="es">También trabajé en folletos, membretes, piezas personalizadas y materiales orientados a inversores.</p></div>
+          </div>
+          <div class="hh-grid"><div class="hh-web-frame"><img src="assets/healthy-heart-web.webp" alt="Healthy Heart website concept"><div class="note-arrow web">↖ Home — Landing page prototype</div></div><div class="hh-social-frame"><img src="assets/healthy-heart-social.webp" alt="Healthy Heart social media concept"><div class="note-arrow social">Social media post prototype ↘</div></div><div class="hh-copy"><div><h4 style="font-family:'Instrument Serif',serif;font-size:3.2rem;font-weight:400;margin:0">Healthy Heart</h4><p class="project-sub block-lang" data-lang="en">Building a clearer identity for a health technology project.</p><p class="project-sub block-lang" data-lang="es">Construyendo una identidad más clara para un proyecto de health tech.</p></div><div><p class="block-lang" data-lang="en">The project had strong value, but its identity was hidden between other concepts. Through messaging, visual identity and content, we gave it a clearer, more differentiated presence.</p><p class="block-lang" data-lang="es">El proyecto tenía mucho valor, pero su identidad estaba escondida entre otros conceptos. A través del messaging, la identidad visual y el contenido, le dimos una presencia más clara y diferenciada.</p><div class="mini-tags"><span>Identity</span><span>Positioning</span><span>Messaging</span><span>Design</span><span>Health Communication</span></div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="wrap">
+        <div class="project-head reveal"><div><div class="project-title">Brand, Lifestyle & Editorial</div><div class="project-sub block-lang" data-lang="en">Adapting communication to different audiences, industries and visual identities.</div><div class="project-sub block-lang" data-lang="es">Adaptando la comunicación a distintas audiencias, industrias e identidades visuales.</div><div class="tags"><span class="tag">Brand Communication</span><span class="tag">Editorial</span><span class="tag">Design</span><span class="tag">Copywriting</span><span class="tag">Bilingual Content</span></div></div><div class="project-number">03</div></div>
+        <div class="brand-zone reveal">
+          <div class="brand-collage">
+            <div class="collage-left"><img class="large" src="assets/life-altering-brochure.webp" alt="Life Altering brochure"><img src="assets/lat-club.webp" alt="LAT Club identity"><img class="travel" src="assets/chiang-mai.webp" alt="Chiang Mai travel content"></div>
+            <div class="brand-copy"><h4>Life Altering + Luxury Home Finders</h4><p class="block-lang" data-lang="en">From health, longevity and wellness to travel and lifestyle, I adapt tone, visual language and content structure to each brand and audience.</p><p class="block-lang" data-lang="es">Desde salud, longevidad y wellness hasta turismo y lifestyle, adapto el tono, el lenguaje visual y la estructura de contenido a cada marca y audiencia.</p><div class="mini-tags"><span>Branding</span><span>Editorial</span><span>Print Design</span><span>Travel</span><span>Lifestyle</span><span>Visual Storytelling</span></div><img class="product" src="assets/peptides.webp" alt="Trusted Peptides product information design"><div class="editorial-chip">Long-form & bilingual writing · English / Spanish</div>
+              <div class="article-links">
+                <button class="article-link" type="button" data-article="article-aging"><span><strong>Reversing the Clock</strong><small>Stem cells & anti-aging · English article</small></span><span>↗</span></button>
+                <button class="article-link" type="button" data-article="article-habits"><span><strong>Healthy Habits & Stem Cell Therapy</strong><small>Health editorial content · English article</small></span><span>↗</span></button>
+              </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal"><img src="assets/carla-about.webp" alt="Carla Ottaviani outdoors"></div>
+        <div class="reveal"><div class="section-kicker"><span data-lang="en">About</span><span data-lang="es">Sobre mí</span></div><h2 class="section-title block-lang" data-lang="en">Strategy, curiosity and a lot of <em>stories.</em></h2><h2 class="section-title block-lang" data-lang="es">Estrategia, curiosidad y muchas <em>historias.</em></h2><p class="section-copy block-lang" data-lang="en">I’m a Social Communication professional and journalist based in Mendoza, Argentina. I work across strategy, writing, design and audiovisual content, especially in industries where ideas can be technical, complex or difficult to explain.</p><p class="section-copy block-lang" data-lang="es">Soy profesional de la Comunicación Social y periodista, radicada en Mendoza, Argentina. Trabajo en estrategia, redacción, diseño y contenido audiovisual, especialmente en industrias donde las ideas pueden ser técnicas, complejas o difíciles de explicar.</p><div class="about-quote block-lang" data-lang="en">What I most enjoy about communication is how it shapes perception and influences decision making. I like creating content that goes beyond informing, aiming to spark a concrete reaction in the people who receive it</div><div class="about-quote block-lang" data-lang="es">Lo que más disfruto de la comunicación es cómo moldea la percepción e influye en la toma de decisiones. Me gusta crear contenidos que vayan más allá de informar y busquen generar una reacción concreta en quienes los reciben</div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap contact-grid"><h2 class="reveal block-lang" data-lang="en">Let’s create something meaningful</h2><h2 class="reveal block-lang" data-lang="es">Creemos algo con sentido</h2><div class="contact-links reveal"><a href="mailto:cottavianipapini@gmail.com">cottavianipapini@gmail.com</a><a href="https://www.linkedin.com/in/carla-ottaviani-digitalcontentandcommunication/" target="_blank">LinkedIn ↗</a><span>Mendoza, Argentina</span></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">© 2026 Carla Ottaviani · Strategic Communications & Content</div></footer>
+</div>
+
+  <div class="article-modal" id="articleModal" aria-hidden="true">
+    <div class="article-modal-card">
+      <button class="article-close" id="articleClose" aria-label="Close article">×</button>
+      <h3 id="articleTitle"></h3>
+      <div id="articleBody"></div>
+    </div>
+  </div>
+
+<script>
+  const enBtn=document.getElementById('enBtn'), esBtn=document.getElementById('esBtn');
+  function setLang(lang){document.body.classList.toggle('es',lang==='es');enBtn.classList.toggle('active',lang==='en');esBtn.classList.toggle('active',lang==='es');document.documentElement.lang=lang;localStorage.setItem('portfolioLang',lang)}
+  enBtn.onclick=()=>setLang('en'); esBtn.onclick=()=>setLang('es'); setLang(localStorage.getItem('portfolioLang')||'en');
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  document.querySelectorAll(".pdf-launch").forEach(link=>{link.addEventListener("click",e=>{ /* keep default in packaged version */ });});
+
+  const articleData = {
+    "article-aging": {title: 'Reversing the Clock: How Stem Cells Contribute to Anti-Aging Treatments', body: '<h4>The Science of Aging: Understanding the Cellular Mechanisms and Role of Stem Cells</h4><p>As we age, it&#x27;s no secret that our bodies undergo various changes. From the appearance of wrinkles and sagging skin to a decline in energy levels, the effects of aging are hard to ignore. But have you ever wondered what exactly causes these changes?</p><p>Well, it all boils down to the science of aging and the intricate cellular mechanisms at play. At the core of this fascinating process lies stem cells.</p><p>Stem cells are like the superheroes of our bodies, constantly working behind the scenes to keep us healthy and youthful. These remarkable cells have the ability to multiply and differentiate into various specialized cell types, such as skin cells or muscle cells.</p><p>They are essentially building blocks that help repair damaged tissues and maintain proper bodily functions. However, as we age, our stem cells begin to lose their effectiveness.</p><p>Their numbers decrease, and their regenerative powers diminish over time. This decline is partly due to a decrease in functionality as well as environmental factors like oxidative stress or inflammation.</p><p>Simply put, our stem cells start losing their mojo just when we need them most! But fear not – researchers have been diligently studying these cellular dynamics in order to uncover ways of harnessing stem cells&#x27; incredible potential for anti-aging purposes.</p><p>One key aspect researchers have discovered is that certain external factors can significantly impact stem cell function. For instance, exposure to harmful UV radiation from the sun or toxins from pollution can accelerate aging by damaging these crucial cells.</p><p>Fortunately, medical advances have discovered treatments that are able to repair tissues with new and fresh stem cells, in order to regenerate it, reduce the inflammation and improve the overall cellular function. At the Life Altering Stem Cells Therapy, there are cutting-edge therapies in this area, you can appointment a free consultation here.</p><p>By delving deeper into their role within our bodies&#x27; intricate cellular mechanisms, we can unlock new possibilities for rejuvenation and defy the hands of time. So stay tuned for more exciting revelations on how stem cells anti aging can revolutionize our approach towards staying young and vibrant!</p><h4>Unleashing Regenerative Potential: How Stem Cells Combat the Effects of Aging</h4><p>As we delve into the fascinating world of stem cells and their remarkable potential in fighting the effects of aging, we are met with a sense of awe and admiration for these tiny, but mighty, cellular powerhouses. Stem cells antiaging have garnered significant attention in recent years due to their unique ability to unleash a cascade of regenerative processes within our bodies.</p><p>At the heart of stem cells&#x27; anti-aging prowess lies their ability to differentiate into various specialized cell types.</p><p>This process, known as differentiation, allows stem cells to replace damaged or dying cells with fresh ones, rejuvenating tissues and organs.</p><p>As we&#x27;ve just said, with age, our body&#x27;s natural reservoirs of stem cells gradually decline in both quantity and quality. Consequently, the regenerative capacity diminishes, leading to common signs of aging such as wrinkles, reduced collagen production, and slower wound healing.</p><p>However, the innovative therapies aim to replenish these declining reserves.</p><p>One such approach involves harvesting adult stem cells from a patient&#x27;s own body (autologous transplantation) or sourcing them from compatible donors (allogeneic transplantation). These extracted stem cells are then processed and administered back into the patient&#x27;s body through various techniques such as injections or infusions.</p><p>Once reintroduced into the system, these rejuvenated stem cells anti aging spring into action by homing in on areas that require repair or regeneration. The transformative impact of this regenerative therapy is not limited solely to cosmetic benefits; it extends well beyond skin-deep.</p><p>Stem cell treatments have shown tremendous succesfull in addressing age-related conditions at their core by facilitating tissue repair and boosting immune system function. From improving joint mobility for individuals with arthritis to enhancing functions for those dealing with autoimmune conditions Lupus – there seems to be no limit to the potential applications of stem cells anti aging in promoting overall wellness.</p><p>In our next section, we will delve deeper into understanding how precisely these remarkable stem cells work at a cellular level to reverse the aging process.</p><p>From Wrinkles to Wellness: Exploring the Benefits of Stem Cell Therapies in Anti-Aging</p><p>When it comes to combating those pesky wrinkles and other signs of aging, we&#x27;re all on the lookout for the next big breakthrough.</p><p>One of the most remarkable advantages of stem cell therapies is their ability to stimulate collagen production. Collagen, a protein that keeps our skin firm and elastic, naturally decreases as we age.</p><p>This decrease can lead to sagging skin and deep wrinkles that seem impossible to get rid of. However, stem cells have the power to rejuvenate our skin by promoting collagen synthesis.</p><p>Through their regenerative properties, stem cells anti aging are able to kickstart the production of new collagen fibers, resulting in firmer and more youthful-looking skin. But wait, there&#x27;s more!</p><p>Stem cell therapies not only target wrinkles but also tackle a whole range of other age-related issues. For example, they can help improve overall skin tone and texture by reducing pigmentation irregularities such as age spots or sun damage.</p><p>Additionally, these cells have the ability to enhance cellular repair processes, speeding up wound healing and reducing scars. So whether you&#x27;re concerned about fine lines or want to address other signs of aging like uneven skin tone or old acne scars - stem cell therapies have got you covered.</p>'},
+    "article-habits": {title: 'Healthy Habits to Enhance the Efficacy of Stem Cell Therapy', body: '<p>While Stem Cell Therapy has emerged as an innovative and remarkably effective treatment option for different medical conditions, there are some key habits that can improve the whole healing process.</p><p>The good habits that we’ll explore in this article not only can help you to optimize the outcomes of Stem Cell Therapy, but also they are able to have a significant impact on your overall health and well-being. For example, healthy habits can reduce the risk of developing chronic diseases like diabetes or heart conditions.</p><h4>A Healthy Exploration</h4><h4>Proper Nutrition:</h4><p>Maintaining a healthy and balanced diet is pretty important before, during, and after stem cell treatment.But don’t worry! This is not about a strict diet that bans you from eating anything. This is about having a balanced intake of essential nutrients, such as vitamins, minerals, and proteins. Furthermore, the researchers suggest that proper nutritional status positively influences stem cell function by supporting the body&#x27;s ability to regenerate and heal damaged tissues</p><h4>Regular Exercise:</h4><p>Engaging in regular exercise can help improve blood circulation, ensuring that oxygen and nutrients reach the targeted areas where stem cells are being deployed. By this way, exercise also stimulates stem cell release, and enhances the overall efficacy of stem cell treatment.</p><p>On the other hand, physical activity has been shown to promote the mobilization and migration of stem cells to damaged tissues, aiding in the regeneration process. For example, a study by Schmidt, A et al. (2009) demonstrated that intensive exercise increases the number of circulating mesenchymal stem cells.</p><h4>Adequate Sleep:</h4><p>Quality sleep is essential for cellular renewal and the healing process within the body. Normally, when you sleep your body shifts into recovery mode of most organism functions. During a stem cell treatment, this process multiplies its working and effectiveness. Aim for seven to eight hours of uninterrupted sleep can allow your body an optimal environment for maximizing the effects of stem cell treatment.</p><h4>Stress Management:</h4><p>Chronic stress can negatively impact cellular function and hinder the healing process. Engaging in stress-reducing activities, such as meditation, yoga, spending time in nature or engaging in hobbies you enjoy, can help to create an environment able to improve the efficacy of stem cell treatment.</p><p>Also it’s important to remember that individual responses to stem cell treatment may vary, and consulting with healthcare professionals in the field is crucial. You can schedule a free consultation at Life Altering Stem Cell Therapy here.</p><h4>What are Stem Cells?</h4><p>Stem cells are like super workers of our body function with the ability to develop into various specialized cell types (blood ,nerve or bone cells, etc.).They’re very different from other cell types and here are the main reasons:</p><p>Stem Cells are undifferentiated, which means that they cannot do specific tasks in their natural state.</p><p>They are able to differentiate into more than 200 specialized cell types needed by our body</p><p>This cell type also has the ability to self-renew</p><h4>Types of Stem Cells</h4><p>Stem cells can be classified in different types.</p><p>The embryonic stem cells are pluripotent, which means that they can develop into any cell type. This type of stem cell can be obtained from donated cord blood or early-stage embryos developed in laboratory techniques.</p><p>On the other hand there are adult stem cells which are already specialized in one tissue function. Then, they can create more stem cells but only with the same function that they develop for their home tissue. This stem cell type can be obtained from donated tissues.</p><p>Additionally, scientists have found a way to restore pluripotent state to adult stem cells in a laboratory so they can act as embryonic stem cells. These stem cell types are called “induced pluripotent stem cells (iPS)”.</p><h4>What Stem Cells Are Used in L.A.T?</h4><p>At Life Altering Stem Cell Therapy Institute, we work with embryonic stem cells obtained from donated blood cord.</p><p>In this way, we guarantee our patients to have an extremely effective therapy with stem cells that can create any specialized cell type needed by their body. At the same time, we fulfill our ethical compromise to use a safe stem cell source due to, such as the placenta, blood cordon is considered biological waste after birth and the removal does not pose any risk for the mother or the child.</p>'}
+  };
+  const articleModal=document.getElementById('articleModal');
+  const articleTitle=document.getElementById('articleTitle');
+  const articleBody=document.getElementById('articleBody');
+  const articleClose=document.getElementById('articleClose');
+  document.querySelectorAll('[data-article]').forEach(btn=>btn.addEventListener('click',()=>{
+    const a=articleData[btn.dataset.article]; if(!a) return;
+    articleTitle.textContent=a.title; articleBody.innerHTML=a.body;
+    articleModal.classList.add('open'); articleModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }));
+  function closeArticle(){articleModal.classList.remove('open');articleModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  articleClose.addEventListener('click',closeArticle);
+  articleModal.addEventListener('click',e=>{if(e.target===articleModal) closeArticle();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') closeArticle();});
+
+</script>
+</body>
+</html>
