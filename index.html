@@ -230,11 +230,21 @@
     .camera-process{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
     .camera-process span{font-size:.78rem;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.65);border:1px solid rgba(23,26,43,.1)}
 
+
+    .camera-reels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px;position:relative;z-index:2}
+    .camera-reel-card{display:block;background:var(--ink);color:#fff;border-radius:24px;padding:24px;min-height:190px;position:relative;overflow:hidden;transition:.25s ease;box-shadow:0 18px 48px rgba(23,26,43,.14)}
+    .camera-reel-card:hover{transform:translateY(-4px)}
+    .camera-reel-card::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.06);right:-50px;bottom:-70px}
+    .camera-reel-num{font-family:"Instrument Serif",serif;font-size:3.4rem;line-height:1;color:var(--coral-soft)}
+    .camera-reel-title{font-weight:700;margin-top:34px;font-size:1rem}
+    .camera-reel-link{margin-top:8px;font-size:.82rem;color:#d8dde3}
+
     @media(max-width:960px){
       .nav-links{display:none}
       .hero-grid,.think-grid,.newsletter-grid,.media-row,.long-video-row,.carousel-row,.science-grid,.brand-collage,.about-grid,.contact-grid,.hh-copy,.camera-grid{grid-template-columns:1fr}
       .portrait-wrap{min-height:520px;margin-top:24px}
       .process{grid-template-columns:1fr 1fr}
+      .camera-reels{grid-template-columns:1fr 1fr}
       .newsletter-visual{grid-template-columns:1fr 1fr}
       .metrics{grid-template-columns:1fr 1fr}
       .hh-grid{grid-template-columns:1fr}.note-arrow{position:static;display:inline-flex;margin-top:10px}.note-arrow.social{justify-self:start}
@@ -252,7 +262,7 @@
       .portrait-wrap{min-height:430px}
       .portrait-card{width:86%}
       .process{grid-template-columns:1fr}
-      .newsletter-visual,.metrics,.collage-left{grid-template-columns:1fr}
+      .newsletter-visual,.metrics,.collage-left,.camera-reels{grid-template-columns:1fr}
       .portfolio-zone,.science-zone,.brand-zone{border-radius:26px;padding:20px}
       .hh-copy{gap:18px}
       .contact h2{font-size:clamp(4rem,18vw,6rem)}
@@ -437,6 +447,19 @@
             </div>
           </div>
         </div>
+
+          <div class="camera-reels">
+            <a class="camera-reel-card" href="https://www.instagram.com/reel/DZI_1SklVC5/?psln=Y2swZ3FqeGFuY21z" target="_blank" rel="noopener">
+              <div class="camera-reel-num">01</div>
+              <div class="camera-reel-title"><span data-lang="en">On-camera financial education</span><span data-lang="es">Educación financiera frente a cámara</span></div>
+              <div class="camera-reel-link"><span data-lang="en">Watch on Instagram ↗</span><span data-lang="es">Ver en Instagram ↗</span></div>
+            </a>
+            <a class="camera-reel-card" href="https://www.instagram.com/reel/DZbHHzSR6Jd/?exln=MnBzNGhwdTlzaWFv" target="_blank" rel="noopener">
+              <div class="camera-reel-num">02</div>
+              <div class="camera-reel-title"><span data-lang="en">Short-form educational content</span><span data-lang="es">Contenido educativo en formato corto</span></div>
+              <div class="camera-reel-link"><span data-lang="en">Watch on Instagram ↗</span><span data-lang="es">Ver en Instagram ↗</span></div>
+            </a>
+          </div>
       </div>
     </section>
 
