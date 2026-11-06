@@ -221,9 +221,18 @@
     .cover-poster .watch-cta{z-index:2;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
     .cover-poster .play-pill{z-index:2;background:rgba(255,255,255,.2)}
 
+
+    .camera-zone{background:#dfe8e4;border-radius:36px;padding:56px;position:relative;overflow:hidden}
+    .camera-zone::after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(44,114,112,.18);border-radius:50%;right:-190px;top:-210px;box-shadow:0 0 0 38px rgba(44,114,112,.04),0 0 0 76px rgba(44,114,112,.03)}
+    .camera-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:48px;align-items:center;position:relative;z-index:2}
+    .camera-label{font-family:"Instrument Serif",serif;font-size:clamp(3rem,5vw,5.2rem);line-height:.92;font-weight:400}
+    .camera-copy{font-size:1.04rem;line-height:1.75;color:#455064;max-width:680px}
+    .camera-process{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+    .camera-process span{font-size:.78rem;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.65);border:1px solid rgba(23,26,43,.1)}
+
     @media(max-width:960px){
       .nav-links{display:none}
-      .hero-grid,.think-grid,.newsletter-grid,.media-row,.long-video-row,.carousel-row,.science-grid,.brand-collage,.about-grid,.contact-grid,.hh-copy{grid-template-columns:1fr}
+      .hero-grid,.think-grid,.newsletter-grid,.media-row,.long-video-row,.carousel-row,.science-grid,.brand-collage,.about-grid,.contact-grid,.hh-copy,.camera-grid{grid-template-columns:1fr}
       .portrait-wrap{min-height:520px;margin-top:24px}
       .process{grid-template-columns:1fr 1fr}
       .newsletter-visual{grid-template-columns:1fr 1fr}
@@ -396,6 +405,36 @@
                 <button class="article-link" type="button" data-article="article-aging"><span><strong>Reversing the Clock</strong><small>Stem cells & anti-aging · English article</small></span><span>↗</span></button>
                 <button class="article-link" type="button" data-article="article-habits"><span><strong>Healthy Habits & Stem Cell Therapy</strong><small>Health editorial content · English article</small></span><span>↗</span></button>
               </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="project" id="on-camera">
+      <div class="wrap">
+        <div class="project-head reveal">
+          <div>
+            <div class="project-title"><span data-lang="en">On-Camera Work</span><span data-lang="es">Trabajo frente a cámara</span></div>
+            <div class="project-sub block-lang" data-lang="en">From communication strategy to on-camera delivery.</div>
+            <div class="project-sub block-lang" data-lang="es">De la estrategia de comunicación a la ejecución frente a cámara.</div>
+          </div>
+          <div class="project-number">04</div>
+        </div>
+        <div class="camera-zone reveal">
+          <div class="camera-grid">
+            <div>
+              <div class="section-kicker">Capitaliza2</div>
+              <div class="camera-label block-lang" data-lang="en">From idea to <em>delivery.</em></div>
+              <div class="camera-label block-lang" data-lang="es">De la idea a la <em>ejecución.</em></div>
+            </div>
+            <div>
+              <p class="camera-copy block-lang" data-lang="en">I also work in front of the camera, especially for educational and social-first content. For Capitaliza2, I handled the full creative process: ideation, communication strategy, scripting, on-camera delivery, recording and editing.</p>
+              <p class="camera-copy block-lang" data-lang="es">También trabajo frente a cámara, especialmente en contenidos educativos y pensados para redes sociales. En Capitaliza2 desarrollé el proceso creativo completo: ideación, estrategia de comunicación, guion, presentación frente a cámara, grabación y edición.</p>
+              <div class="camera-process">
+                <span>Ideation</span><span>Strategy</span><span>Scripting</span><span>On-camera</span><span>Recording</span><span>Editing</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
